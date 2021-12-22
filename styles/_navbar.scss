@@ -1,0 +1,109 @@
+@import 'mixins';
+@import 'variables';
+
+%align-center {
+  display:flex;
+  align-items: center;
+}
+
+.navbar {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 62px;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+
+  @include tablet {
+    height: 67px;
+  }
+
+  @include desktop {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+
+
+  &__container {
+
+    display: flex;
+    justify-content: space-between; 
+    @extend %align-center;
+    height: 100%;
+
+    @include desktop {
+    max-width: $container-width;
+    margin: auto;
+    } 
+
+    &__logo {
+      color: $white;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 300;
+
+      margin-left: 36px;
+    } 
+
+    &__menu {
+
+      display: flex;
+      flex-direction: row;
+
+      &__bar {
+        color: $white;
+        font-size: 22px; 
+        font-weight: 900;
+        margin-right: 35px;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &__links {
+
+        display: none;
+
+        @include tablet {
+          display: block;
+        }
+
+
+        & a {
+        color: $white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 12px;
+        text-transform: uppercase;
+        
+        margin-right: 29px;
+        
+        }
+
+
+      }
+
+      &__icons {
+
+        display: none;
+        margin-right: 15px;
+
+        @include tablet {
+          display: block;
+        }
+
+        & a {
+        color: $white;
+        font-weight: 400;
+        font-size: 16px;
+        margin-right: 20px;  
+        }
+      }
+    }
+  }
+}

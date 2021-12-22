@@ -1,0 +1,162 @@
+@import 'mixins';
+@import 'variables';
+@import 'navbar';
+@import 'footer';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $light-gray;
+}
+
+.navbar {
+  background-color: purple;
+}
+
+.hero {
+
+  text-align: center;
+
+  & h1 {
+  margin-top: 72+67px;
+  font-size: 42px;
+  margin-bottom: 74px;
+  }
+}
+
+
+.content__container {
+  margin: 0px 12px;
+
+  @include desktop {
+    max-width: $container-width;
+    margin: 0px auto;
+  }
+}
+
+.content {
+
+  background-color: white;  
+  text-align: center;
+  margin: 0px 24px;
+  border-radius: 8px;
+  margin-top: -50px; 
+
+  box-shadow:  20px 20px 60px #bebebe;
+
+  &__description {
+
+    margin: 0px 12px;
+
+    & p {
+      font-size: 18px;
+      font-weight: 300;
+      color: #999999;
+      padding-top: 50px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+
+    margin: 0px 12px;
+
+      &__contact-info {
+        margin-bottom: 50px;
+
+        & input[type="text"] {
+          border: none;
+          border-bottom-color: #D2D2D2;
+          border-bottom-width: 1px; 
+          border-bottom-style: outset;
+          margin-bottom: 40px;
+          width: 100%;
+
+          &::placeholder{
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+          } 
+        }
+      }
+
+     &__message { 
+
+        & textarea {
+          border: none;
+          border-bottom-color: #D2D2D2;
+          border-bottom-width: 1px; 
+          border-bottom-style: outset;
+          margin-bottom: 40px;
+          width: 100%;
+          resize: none;
+        }
+          
+        & textarea::placeholder {
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          color: #999999;
+          
+        }
+      }
+
+      & input[type="submit"] {
+        padding: 14px 47px;
+        background-color: purple;
+        border-radius: 4px;
+        border:none;
+        cursor: pointer;
+
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: $white;
+        text-transform: uppercase;
+
+        margin-bottom: 50px;
+
+      }
+
+  
+
+  }
+
+
+  &__contact-me {
+
+    margin: 0px 12px;
+    padding-bottom: 50px;
+
+    &--links {
+
+      display: flex;
+      justify-content: center;
+
+      a {
+        font-size: 62px;
+        font-weight: 400;
+        color: $gray;
+        margin-left: 14px;
+        margin-right: 14px;
+
+        @include tablet {
+          font-size: 80px;
+        }
+      
+      }
+      
+    }
+
+  }
+
+  & h2 {
+    font-size: 24px;
+    color: $gray;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 28px;
+    }
+  }
+}
